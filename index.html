@@ -3,28 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weather Data</title>
+  <title>UK Climate Averages</title>
+  <link rel="stylesheet" href="style.css">
+
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <script src="script.js" defer></script>
-  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Monthly Weather Data</h1>
-  <p>This table shows monthly temperatures, rainfall and sunshine hours.</p>
+  <header>
+    <h1>UK Climate Averages</h1>
+    <p class="subtitle">Monthly climate data, 1991–2020</p>
+  </header>
 
-  <table id="dataTable">
-    <thead>
-      <tr>
-        <th>Month</th>
-        <th>Max Temperature (°C)</th>
-        <th>Min Temperature (°C)</th>
-        <th>Rainfall (mm)</th>
-        <th>Sunshine Hours</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <main>
+    <section class="intro">
+      <h2>About the Data</h2>
+      <p>
+        This website shows the UK's average monthly temperatures,
+        sunshine hours and rainfall from 1991 to 2020.
+      </p>
+      <p>
+        The data helps us understand how the UK's climate changes
+        throughout the year.
+      </p>
+    </section>
 
-  <p>Data source: Add your original data source here.</p>
-</body>
-</html>
+    <section>
+      <h2>Monthly Climate Data</h2>
+      <p id="status">Loading data...</p>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Month</th>
+              <th>Maximum Temperature (°C)</th>
+              <th>Minimum Temperature (°C)</th>
+              <th>Sunshine (hours)</th>
+              <th>Rainfall (mm)</th>
+            </tr>
+          </thead>
+          <tbody id="weather-table">
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="source">
+      <h2>Data Source</h2>
+      <p>
+        Source: Met Office, UK climate averages (1991–2020).
+      </p>
+      <p>
+        <a
+          href="https://www.metoffice.gov.uk/research/climate/maps-and-data/location-specific-long-term-averages/seasonal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit the official Met
